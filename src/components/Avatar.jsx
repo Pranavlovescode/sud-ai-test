@@ -19,12 +19,14 @@ export function Avatar(props) {
   const group = useRef();
   const {animations:idleAnimation}=useFBX('/animations/Idle (2).fbx');
   const {animations:greetAnimation}=useFBX('/animations/Standing Greeting (4).fbx');
-  console.log(idleAnimation,greetAnimation);
+  const {animations:headnodAnimation}=useFBX('/animations/Hand Raising.fbx');
+  console.log(idleAnimation,greetAnimation,headnodAnimation);
   idleAnimation[0].name='idle';
   greetAnimation[0].name='greet';
+  headnodAnimation[0].name='headnod';
 
-  const [animation, setAnimation] = useState("idle");
-  const {actions} = useAnimations([idleAnimation[0], greetAnimation[0]], group);
+  const [animation, setAnimation] = useState("headnod");
+  const {actions} = useAnimations([idleAnimation[0], greetAnimation[0], headnodAnimation[0]], group);
 
 
 
